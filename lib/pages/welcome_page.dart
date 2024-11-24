@@ -12,6 +12,7 @@ class WelcomePage extends StatelessWidget {
           hasPagination: true,
           activeIndicator: Colors.blue,
           enlargeMainPage: true,
+          enableInfiniteScroll: false,
           items: [
             WelcomeWidget(
               title: "Viaja",
@@ -33,6 +34,7 @@ class WelcomePage extends StatelessWidget {
                   "l texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno están",
               color: Colors.cyan,
               asset: "agregar",
+              showButton: true,
             ),
           ],
         ),

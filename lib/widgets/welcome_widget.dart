@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomeWidget extends StatelessWidget {
   String asset;
   String title;
   String description;
   Color color;
+  bool showButton;
   WelcomeWidget({
     required this.asset,
     required this.title,
     required this.description,
     required this.color,
+    this.showButton = false,
   });
+
+  Future<void> setYaInicio() async {
+    SharedPreferences _prefs = await SharedPreferences.getInstance();
+    _prefs.setBool('yaInicio', true);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +59,17 @@ class WelcomeWidget extends StatelessWidget {
                   description,
                   style: TextStyle(color: Colors.white),
                 ),
-              )
+              ),
+              showButton
+                  ? Padding(
+                      padding: const EdgeInsets.only(top: 24),
+                      child: ElevatedButton(
+                          onPressed: () {
+                            setYaInicio();
+                          },
+                          child: Text("Vamos")),
+                    )
+                  : Container(),
             ],
           ),
         ),
