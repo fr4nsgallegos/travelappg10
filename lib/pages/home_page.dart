@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travelappg10/widgets/destination_card.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -42,69 +43,15 @@ class HomePage extends StatelessWidget {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
               ),
             ),
-            Container(
-              padding: EdgeInsets.all(12),
-              width: 170,
-              height: 220,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(25),
-                image: DecorationImage(
-                  colorFilter: ColorFilter.mode(
-                      Colors.black.withOpacity(0.4), BlendMode.srcATop),
-                  image: NetworkImage(
-                      "https://images.pexels.com/photos/257433/pexels-photo-257433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Column(
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
                 children: [
-                  Row(
-                    children: [
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.35),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Text(
-                          "NEW",
-                          style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                      Stack(
-                        clipBehavior: Clip.none,
-                        children: [
-                          Positioned(
-                            left: 40,
-                            child: CircleAvatar(
-                              radius: 16,
-                              backgroundImage: NetworkImage(
-                                  "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                            ),
-                          ),
-                          // Positioned(
-                          //   left: 20,
-                          //   child: CircleAvatar(
-                          //     radius: 16,
-                          //     backgroundImage: NetworkImage(
-                          //         "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                          //   ),
-                          // ),
-                          // Positioned(
-                          //   left: 16,
-                          //   child: CircleAvatar(
-                          //     radius: 16,
-                          //     backgroundImage: NetworkImage(
-                          //         "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
-                          //   ),
-                          // ),
-                        ],
-                      ),
-                    ],
-                  ),
+                  DestinationCard(),
+                  DestinationCard(),
+                  DestinationCard(),
+                  DestinationCard(),
+                  DestinationCard(),
                 ],
               ),
             ),
