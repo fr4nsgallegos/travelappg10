@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:travelappg10/widgets/card2_widget.dart';
 import 'package:travelappg10/widgets/destination_card.dart';
 
@@ -31,11 +32,17 @@ class HomePage extends StatelessWidget {
           children: [
             Text(
               "Find the best tour",
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.w500),
+              style: TextStyle(
+                fontFamily: 'Jaro',
+                fontSize: 26,
+                fontWeight: FontWeight.w500,
+              ),
             ),
             Text(
               "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.",
-              style: TextStyle(fontSize: 16),
+              style: GoogleFonts.montserrat(
+                fontSize: 16,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
